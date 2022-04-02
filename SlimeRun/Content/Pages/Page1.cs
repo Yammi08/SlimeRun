@@ -15,16 +15,15 @@ namespace Tutorial1.Content.Pages
 {
     public class Page1 : PageManager
     {
-        //Camera Dimension
         #region Entities
         //Enemie
-        
-        //Dictionary<string, EntitiesGame> dogs = new Dictionary<string, EntitiesGame>();
         Dictionary<string, EntitiesGame> spikes = new Dictionary<string, EntitiesGame>();
         Dictionary<string, EntitiesGame> spikesUpDown = new Dictionary<string, EntitiesGame>();
+
         //entities
         Player player;
         PortalNextLevel portalNext;
+
         //TileMap
         TileMapLvl1 tileMapLvl1;
         
@@ -53,12 +52,6 @@ namespace Tutorial1.Content.Pages
             entities.Instance(portalNext);
             //Player
             entities.Instance(player);
-            //dogs.Add(EnemieDog.CurrentName(), new EnemieDog(this, new Vector2(32, -15), 1));
-            //dogs.Add(EnemieDog.CurrentName(), new EnemieDog(this, new Vector2(330, 18), 1));
-
-
-            //spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 39 + 10, 80 - 61)));
-
 
             tileMapLvl1 = new TileMapLvl1(this);
             entities.Instance(tileMapLvl1);
@@ -83,17 +76,14 @@ namespace Tutorial1.Content.Pages
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 57 + 10, 80 - 53)));
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 56 + 10, 80 - 53)));
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 55 + 10, 80 - 53)));
-            //spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 66 + 10, 80 - 61)));
-            //spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 52 + 10, 80 - 61)));
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 52 + 10, 80 - 53)));
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 51 + 10, 80 - 53)));
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 50 + 10, 80 - 53)));
-            //spikes.Add(SpikeUpDown.CurrentName(), new SpikeUpDown(this, new Vector2(8 * 49 + 10, 80 - 61)));
+
             //GroupB
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 47 + 10, 80 - 53)));
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 46 + 10, 80 - 53)));
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 45 + 10, 80 - 53)));
-            //spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 43 + 10, 80 - 61)));
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 42 + 10, 80 - 53)));
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 41 + 10, 80 - 53)));
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 40 + 10, 80 - 53)));

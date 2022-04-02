@@ -57,7 +57,6 @@ namespace Tutorial1.Content.Entities
         }
         #endregion
         #region RigidBody
-        //private float prevX;
         public Vector2 velocity;
         const float gravity =200f;
         const float jumpSpeed = -70;
@@ -137,9 +136,9 @@ namespace Tutorial1.Content.Entities
             transform = GetComponent<Transform>();
             Position = startPosition;
             page.drawOn.Add(GetComponent<Renderer>(), transform);
-            //DrawingSystem.Add(GetComponent<Renderer>(), transform);
+
             page.refreshSprite.Add(GetComponent<Code.EntityCode.Animation>());
-            //GetComponent<ParticleSystem>().isActive = false;
+
 
             collision = GetComponent<Collision>();
 
@@ -174,7 +173,6 @@ namespace Tutorial1.Content.Entities
                 var moveTod = MathForm.MoveToward(Position, portalNextLevel.position, 60);
                 velocity = new Vector2(MathHelper.Lerp(velocity.X, moveTod.X, (float)gameTime.ElapsedGameTime.TotalSeconds*3), MathHelper.Lerp(velocity.Y, moveTod.Y, (float)gameTime.ElapsedGameTime.TotalSeconds*3));
                 Position += velocity *(float)gameTime.ElapsedGameTime.TotalSeconds;
-                //Debug.WriteLine(velocity);
                 
                 if ((MathHelper.Distance(Position.X,portalNextLevel.position.X) < 0.2f && MathHelper.Distance(Position.Y, portalNextLevel.position.Y)<0.2f && Math.Abs(velocity.X * (float)gameTime.ElapsedGameTime.TotalSeconds) < 0.2f && Math.Abs(velocity.Y * (float)gameTime.ElapsedGameTime.TotalSeconds) < 0.2f) || Keyboard.GetState().IsKeyDown(Keys.Z) &&  !downKey)
                 {
@@ -235,8 +233,7 @@ namespace Tutorial1.Content.Entities
                         }
                         else if (transform.position.Y + hitBox.Height <= Position.Y || Position.X <= transform.position.X || Position.X >= transform.position.X + hitBox.Width)
                         {
-                            //velocity.X *= -1f;
-                            //velocity.Y = jumpSpeed * 0.5f;
+
                             bird.Attack();
                         }
                     }
@@ -258,7 +255,9 @@ namespace Tutorial1.Content.Entities
                     velocity.X = 0;
 
                 }
-                float newVelocityX = velocity.X * (float)gameTime.ElapsedGameTime.TotalSeconds;//velocity
+
+                float newVelocityX = velocity.X * (float)gameTime.ElapsedGameTime.TotalSeconds; //velocity
+
                 if (collision.IsColliding(Position + new Vector2(newVelocityX, 0), "Ground"))
                 {
                     Position = new Vector2((float)Math.Round(Position.X), Position.Y);
@@ -433,8 +432,7 @@ namespace Tutorial1.Content.Entities
                 Position += new Vector2(newVelocityX, newVelocityY);
 
                 Position = new Vector2((float)Math.Round(Position.X, 2), (float)Math.Round(Position.Y, 2));
-                //Debug.WriteLine("Position: " + Position);
-                //prevX = velocity.X;
+
                 
                 
                 timer0 -= (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -457,13 +455,13 @@ namespace Tutorial1.Content.Entities
             {
                 EndGame.Update(gameTime);
                 EndGame.StartDraw();
+                
             }
                
         }
         void Destroy(float salto)
         {
             currentAnimation = (int)Animation.death;
-            
             velocity.Y = jumpSpeed * salto;
         }
 

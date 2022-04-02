@@ -45,9 +45,6 @@ namespace Remplaze.Code
             this.transform = transform;
 
             #endregion
-            #region GetComponent
-            //renderer.texture.Reload();
-            #endregion
             random = new Random();
             this.renderer = renderer;
             colors = color;
@@ -75,18 +72,8 @@ namespace Remplaze.Code
                 if (particlesIn.Count > 0)
                 {
                     
-                    if (isColliding)
-                    {
-                        /*for (int i = 0; i < particlesIn.Count; i++)
-                        {
-                          var particle = particlesIn[i];
-
-                        particle.GetComponent<RigidBody>().MoveAndSlide(particle.direction.X * speed, particle.direction.Y * speed,(float)gameTime.ElapsedGameTime.TotalSeconds);
-
-                        }*/
-                    }
-                    else
-                    {
+                    if (!isColliding)
+                    { 
                         for (int i = 0; i < particlesIn.Count; i++)
                         {
                             var particle = particlesIn[i];
@@ -192,8 +179,6 @@ namespace Remplaze.Code
             this.speed = particleSystem.speed;
             this.angle = particleSystem.angle;
             this.force = particleSystem.force;
-
-            //GetComponent<RigidBody>().SetVelocity(this.direction.X * speed, this.direction.Y * speed);
 
             lifeSpent = 0;
         }

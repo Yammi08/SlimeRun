@@ -64,19 +64,7 @@ namespace Tutorial1.Content.Entities
                                                 {'%',new Vector2(1,5) },{'R', new Vector2(2,5) }, {'^', new Vector2(3,5) }});
 
             collisionMap = new CollisionMap(this, tileMap);
-            /*if (number == 0)
-            {
-                collisionMap  = new CollisionMap(this,tileMap);
-                AddComponent(renderer);
-                AddComponent(tileMap);
-                AddComponent(collisionMap);
-            
-                page.rectanglesMaps.Add(tileMap, collisionMap.collision);
-                page.drawMaps.Add(tileMap);
-                page.groupMap["Ground"].Add(collisionMap);
-                number = 1;
-            }*/
-            
+
          }
 
         public override void EnterTree()

@@ -57,9 +57,6 @@ namespace Tutorial1
 
         protected override void Initialize()
         {
-            //_graphics.PreferredBackBufferHeight = 450;
-            //_graphics.PreferredBackBufferWidth  = 768;
-            //_graphics.ApplyChanges();
             
             screenHeight = _graphics.PreferredBackBufferHeight;
             screenWidth = _graphics.PreferredBackBufferWidth;
@@ -72,7 +69,7 @@ namespace Tutorial1
             textureSquare = Content.Load<Texture2D>("Square");
             Player.texture = Content.Load<Texture2D>("CAT");
             Player.textureDead = Content.Load<Texture2D>("DeadCAT");
-            //Player.particleDestroy = Content.Load<Texture2D>("ParticleDestruction");
+
             StartPage.texture = Content.Load<Texture2D>("Logo");
             EnemieDog.texture = Content.Load<Texture2D>("boss");
             TileMapLvl1.texture = Content.Load<Texture2D>("Ground");
@@ -116,7 +113,6 @@ namespace Tutorial1
 
             currentPage.Start();
             GameLife.start();
-            EndGame.LoadContent();
         }
 
         protected override void Update(GameTime gameTime)
@@ -154,7 +150,7 @@ namespace Tutorial1
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(new Color(182, 205, 227, 255));
-            // TODO: Add your drawing code here
+
             AnimationPlay.RefreshSprite(gameTime);
             _spriteBatch.Begin(transformMatrix: Camera.Transform,blendState: BlendState.AlphaBlend,samplerState:SamplerState.PointClamp);
             BackGround.background(_spriteBatch);

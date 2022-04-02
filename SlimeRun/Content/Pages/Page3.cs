@@ -40,15 +40,13 @@ namespace Remplaze.Content.Pages
         public override void EnterTree()
         {
 
-            //entities.Instance(portalNext);
             //player
-            player = new Player(this, new Vector2(/*966,-80));*/32, 12.5f));
+            player = new Player(this, new Vector2(32, 12.5f));
 
             tileMapLvl3 = new TileMapLvl3(this);
             portalNext = new PortalNextLevel(this,new Vector2(1030,-95),"Page4");
             birds.Add("Bird1",new EnemieBird(this,new Vector2(8*67+10,-4)));
 
-            //spikes.Add(HitGround.CurrentName(),new HitGround(this,new Vector2(8*83+10,8*8-80)));
             
             foreach (var bird in birds.Values)
                 entities.Instance(bird);
@@ -95,8 +93,6 @@ namespace Remplaze.Content.Pages
 
             
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 105 + 10, 8 * 5 - 80)));
-            //spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 105 + 10, 8 * 2 - 80)));
-            //spikes.Add(HitGround.CurrentName(),new HitGround(this, new Vector2(8 * 113 + 10, 8 * 7 - 80)));
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 113 + 10, 8 * 6 - 80)));
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 113 + 10, 8 * 4 - 80)));
             foreach (var spikeUp in spikesUpDown.Values)
@@ -104,14 +100,7 @@ namespace Remplaze.Content.Pages
             foreach (var spike in spikes.Values)
                 entities.Instance(spike);
             tileMapLvl3 = new TileMapLvl3(this);
-            //TileMapLvl1
-            //tileMapLvl1.LoadContent(content);
             tileMapLvl3.LoadContent(content);
-            /*//Enemies
-            foreach (var dog in dogs.Values)
-            {
-                entities.Instance(dog);
-            }*/
 
             entities.LoadContent(content);
         }
@@ -122,7 +111,6 @@ namespace Remplaze.Content.Pages
         }
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            //throw new NotImplementedException();
         }
     }
 }

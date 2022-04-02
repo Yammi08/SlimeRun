@@ -40,9 +40,8 @@ namespace Remplaze.Content.Pages
         public override void EnterTree()
         {
 
-            //entities.Instance(portalNext);
             //player
-            player = new Player(this, new Vector2(/*8*139,6*5f-100));*/32, 16.5f));
+            player = new Player(this, new Vector2(32, 16.5f));
 
             tileMapLvl4 = new TileMapLvl4(this);
             portalNext = new PortalNextLevel(this, new Vector2(8*137, 6*6.5f-100), "Page5");
@@ -69,23 +68,15 @@ namespace Remplaze.Content.Pages
             tileMapLvl4 = new TileMapLvl4(this);
             //TileMapLvl4
             tileMapLvl4.LoadContent(content);
-            /*//Enemies
-            foreach (var dog in dogs.Values)
-            {
-                entities.Instance(dog);
-            }*/
+
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 32 + 10, 8 * 14 - 100)));
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 33 + 10, 8 * 14 - 100)));
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 34 + 10, 8 * 14 - 100)));
-            /*spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 36 + 10, 8 * 13 - 100)));
-            spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 37 + 10, 8 * 13 - 100)));
-            spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 38 + 10, 8 * 13 - 100)));
-            spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 39 + 10, 8 * 13 - 100)));*/
+
 
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 70 + 10, 8 * 10 - 100)));
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 71 + 10, 8 * 10 - 100)));
             spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 72 + 10, 8 * 10 - 100)));
-            //spikes.Add(HitGround.CurrentName(), new HitGround(this, new Vector2(8 * 74 + 10, 8 * 9 - 100)));
 
             spikesUpDown.Add(SpikeUpDown.CurrentName(), new SpikeUpDown(this, new Vector2(8 * 90 + 10, 8 * 7 - 100)));
             spikesUpDown.Add(SpikeUpDown.CurrentName(), new SpikeUpDown(this, new Vector2(8 * 90 + 10, 8 * 9 - 100)));
@@ -110,7 +101,6 @@ namespace Remplaze.Content.Pages
         }
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            //throw new NotImplementedException();
         }
     }
 }

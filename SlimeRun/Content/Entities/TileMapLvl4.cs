@@ -60,20 +60,6 @@ namespace Remplaze.Content.Entities
 
             collisionMap = new CollisionMap(this, tileMap);
 
-            /*if (number == 0)
-            {
-                
-                AddComponent(renderer);
-                AddComponent(tileMap);
-                AddComponent(collisionMap);
-
-                page.rectanglesMaps.Add(tileMap, collisionMap.collision);
-                page.drawMaps.Add(tileMap);
-                page.groupMap["Ground"].Add(collisionMap);
-                number = 1;
-            }*/
-
-
         }
 
         public override void EnterTree()

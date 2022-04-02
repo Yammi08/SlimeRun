@@ -118,7 +118,6 @@ namespace Tutorial1.Code
                         }
                         else
                         {
-                            //preview = new Rectangle(preview.X,preview.Y,preview.Width- (int)map.GetRenderer().tileCut.X,preview.Height);
                             collision.Add(preview);
                             
                             preview = new Rectangle((int)item.X, (int)item.Y, (int)map.GetRenderer().tileCut.X, (int)map.GetRenderer().tileCut.Y);
@@ -130,7 +129,7 @@ namespace Tutorial1.Code
                 {
                     if (!findData || collision[collisionBit].Width >= preview.Width)
                     {
-                        preview = new Rectangle(preview.X, preview.Y, preview.Width + (int)map.GetRenderer().tileCut.X, preview.Height);//(int)(item.X + map.GetRenderer().tileCut.X) - preview.X, (int)(item.Y + map.GetRenderer().tileCut.Y) - preview.Y);
+                        preview = new Rectangle(preview.X, preview.Y, preview.Width + (int)map.GetRenderer().tileCut.X, preview.Height);
                     }
 
                 }
@@ -139,11 +138,7 @@ namespace Tutorial1.Code
             }
             collision.Add(preview);
             for (int i = 0; i < collision.Count; i++)
-            {
-                collision[i] = new Rectangle(collision[i].X /*+ (int)map.GetRenderer().tileCut.X + 2*/, collision[i].Y/*+(int)map.GetRenderer().tileCut.Y+2*/, collision[i].Width, collision[i].Height);
-
-
-            }
+                collision[i] = new Rectangle(collision[i].X, collision[i].Y, collision[i].Width, collision[i].Height);
             
         }
         

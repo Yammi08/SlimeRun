@@ -40,7 +40,6 @@ namespace Tutorial1.Content.Entities
 
         public override void LoadContent(ContentManager Content)
         {
-            //
         }
         public override void EnterTree()
         {
@@ -81,11 +80,7 @@ namespace Tutorial1.Content.Entities
         public override void Update(GameTime gameTime)
         {
             GetComponent<ParticleSystem>().UpdateParticle(gameTime);
-            /*if(GetComponent<Animation>().currentFrame >= 4.5f )
-            {
-                GetComponent<Animation>().currentFrame = 0;
-            }*/
-            //Debug.WriteLine(GetComponent<Animation>().currentFrame);
+
         }
 
         public override void Start()

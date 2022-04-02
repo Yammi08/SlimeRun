@@ -79,7 +79,7 @@ namespace Remplaze.Content.Entities
                 );
 
             GetComponent<Animation>().Add("Attack", new Vector2[] {new Vector2(1,1)});
-            GetComponent<Animation>().Add("Fly",new Vector2[] { new Vector2(3,1), new Vector2(2,1)/*, new Vector2(1,1)*/});
+            GetComponent<Animation>().Add("Fly",new Vector2[] { new Vector2(3,1), new Vector2(2,1)});
             GetComponent<Animation>().Add("Hit",new Vector2[] { new Vector2(4,1),new Vector2(5,1)});
             GetComponent<Animation>().Add("Death",new Vector2[] {new Vector2(6,1), new Vector2(7,1), new Vector2(8,1)});
             GetComponent<Animation>().Add("Respawn",new Vector2[] {new Vector2(8,1),new Vector2(7,1), new Vector2(6,1) });
