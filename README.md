@@ -1,2 +1,2 @@
 # SlimeRun
-este proyecto fue realizadon durente 2021
+este proyecto fue realizadon durante 2021
